@@ -38,10 +38,22 @@ function TransactionTable({ transactions, role }) {
               </td>
 
               {role === 'admin' ? (
-                <td className="px-4 py-3">
-                  <button className="rounded-md bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200">
-                    Edit
-                  </button>
+                 <td className="px-4 py-3">
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      className="rounded-md bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200"
+                    >
+                      Edit
+                    </button>
+
+                    <button
+                      type="button"
+                      className="rounded-md bg-red-100 px-3 py-1 text-xs font-medium text-red-700 dark:bg-red-900/30 dark:text-red-300"
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </td>
               ) : null}
             </tr>

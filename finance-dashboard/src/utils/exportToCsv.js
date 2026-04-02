@@ -19,9 +19,12 @@ export function exportTransactionsToCsv(transactions , filename = 'transactions.
        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
        const url = URL.createObjectURL(blob)
 
+       const uuid = crypto.randomUUID()
+       const uniqueFilename = `${filename.replace('.csv', '')}_${uuid}.csv`
+
        const link = document.createElement('a')
        link.href = url
-       link.setAttribute('download', filename)
+       link.setAttribute('download', uniqueFilename)
        document.body.appendChild(link)
        link.click()
        document.body.removeChild(link)
