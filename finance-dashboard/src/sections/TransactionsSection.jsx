@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux'
 import FiltersBar from '../components/FiltersBar'
 import TransactionTable from '../components/TransactionTable'
 import EmptyState from '../components/EmptyState'
+import { exportTransactionsToCsv } from '../utils/exportToCsv'
 import { filterAndSortTransactions } from '../utils/filterTransactions'
 
 function TransactionsSection() {
@@ -34,11 +35,26 @@ function TransactionsSection() {
            </p>
         </div>
 
-        {role === 'admin' ? (
-          <button className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white dark:bg-white dark:text-slate-900">
-            Add Transaction
-          </button>
-        ) : null}
+        <div className="flex items-center gap-2">
+          <button
+           onClick={() =>
+             exportTransactionsToCsv(
+             filteredTransactions,
+          `transactions-${new Date().toISOString().split('T')[0]}.csv`
+         )
+         }
+            disabled={filteredTransactions.length === 0}
+           className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+          >
+          Export CSV
+         </button>
+
+         {role === 'admin' ? (
+           <button className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white dark:bg-white dark:text-slate-900">
+             Add Transaction
+           </button>
+         ) : null}
+         </div>
       </div>
 
       <FiltersBar categories={categories} />
