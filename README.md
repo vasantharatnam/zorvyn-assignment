@@ -201,12 +201,6 @@ npm run dev
 
 ---
 
-## 📷 Demo (Optional)
-
-*Add screenshots or GIFs here if available*
-
----
-
 ## 👨‍💻 Author
 
 * Built as part of a frontend assessment to demonstrate UI design, state management, and interaction handling.
