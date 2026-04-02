@@ -7,6 +7,8 @@ This project demonstrates how to design intuitive user interfaces, manage state 
 
 ---
 
+live-link : https://incredible-otter-9a77b0.netlify.app/
+
 ## 🚀 Overview
 
 This dashboard allows users to:
