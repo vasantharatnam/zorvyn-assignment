@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { getMonthlyChartData, getCategoryChartData } from '../utils/chartHelpers'
+import { getMonthlyChartData, getCategoryChartData, stringToHslColor} from '../utils/chartHelpers'
 import {
   ResponsiveContainer,
   BarChart,
@@ -18,7 +18,6 @@ function ChartsSection() {
   const monthlyData = getMonthlyChartData(transactions)
   const categoryData = getCategoryChartData(transactions)
 
-  const colors = ['#2563eb', '#16a34a', '#f59e0b', '#dc2626', '#7c3aed', '#0891b2']
 
   return (
     <section className="grid gap-4 xl:grid-cols-2">
@@ -30,7 +29,7 @@ function ChartsSection() {
         <div className="h-72">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={monthlyData}>
-              <XAxis dataKey="month" />
+              <XAxis dataKey="label" angle={-30} textAnchor="end" height={60}/>
               <YAxis />
               <Tooltip />
               <Bar dataKey="income" fill="#16a34a" />
@@ -58,7 +57,7 @@ function ChartsSection() {
                 {categoryData.map((entry, index) => (
                   <Cell
                     key={entry.name}
-                    fill={colors[index % colors.length]}
+                    fill={stringToHslColor(entry.name)}
                   />
                 ))}
               </Pie>
