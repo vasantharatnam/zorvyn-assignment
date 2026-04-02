@@ -1,4 +1,4 @@
-import { formatCurrency } from '../utils/formatCurrency'
+import { formatCurrency } from '../utils/utils.js'
 
 function TransactionTable({ transactions, role }) {
   return (

@@ -2,8 +2,8 @@ import { useSelector } from 'react-redux'
 import FiltersBar from '../components/FiltersBar'
 import TransactionTable from '../components/TransactionTable'
 import EmptyState from '../components/EmptyState'
-import { exportTransactionsToCsv } from '../utils/exportToCsv'
-import { filterAndSortTransactions } from '../utils/filterTransactions'
+import { exportTransactionsToCsv , filterAndSortTransactions } from '../utils/utils.js'
+
 
 function TransactionsSection() {
   const {

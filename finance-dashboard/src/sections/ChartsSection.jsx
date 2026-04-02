@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { getMonthlyChartData, getCategoryChartData, stringToHslColor} from '../utils/chartHelpers'
+import { getMonthlyChartData, getCategoryChartData, stringToHslColor} from '../utils/utils.js'
 import {
   ResponsiveContainer,
   BarChart,

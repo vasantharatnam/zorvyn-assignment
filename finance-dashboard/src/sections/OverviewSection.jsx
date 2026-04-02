@@ -4,8 +4,8 @@ import {
   getBalance,
   getTotalExpenses,
   getTotalIncome,
-} from '../utils/summaryHelpers'
-import { formatCurrency } from '../utils/formatCurrency'
+  formatCurrency
+} from '../utils/utils.js'
 
 function OverviewSection() {
   const transactions = useSelector((state) => state.finance.transactions)

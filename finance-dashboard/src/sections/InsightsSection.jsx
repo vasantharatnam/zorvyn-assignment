@@ -1,8 +1,6 @@
 import { useSelector } from 'react-redux'
 import InsightCard from '../components/InsightCard'
-import { getHighestSpendingCategory } from '../utils/insightHelpers'
-import { formatCurrency } from '../utils/formatCurrency'
-import { getBalance } from '../utils/summaryHelpers'
+import { getHighestSpendingCategory , formatCurrency , getBalance } from '../utils/utils.js'
 
 function InsightsSection() {
   const transactions = useSelector((state) => state.finance.transactions)
